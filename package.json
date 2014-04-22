@@ -1,0 +1,27 @@
+{
+  "name": "ember-cli-dep-resolver",
+  "version": "0.0.0",
+  "description": "Resolves object depencies as a build process",
+  "main": "parser.js",
+  "scripts": {
+    "test": "mocha --timeout 8000 --reporter spec tests/**/*.spec.js",
+    "autotest": "mocha --watch --reporter spec tests/**/*.spec.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "esprima": "git://github.com/thomasboyt/esprima#4be906f1abcbb",
+    "fs-extra": "^0.8.1",
+    "rsvp": "^3.0.6",
+    "npm": "^1.4.7",
+    "ast-traverse": "^0.1.1",
+    "handlebars": "^2.0.0-alpha.2"
+  },
+  "devDependencies": {
+    "mocha": "^1.18.2",
+    "expect": "^0.1.1",
+    "grunt": "^0.4.4",
+    "grunt-mocha": "^0.4.10",
+    "chai": "^1.9.1"
+  }
+}
