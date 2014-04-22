@@ -2,6 +2,7 @@ var expect = require('chai').expect;
 var fs = require('fs');
 var Parser = require('../../lib/Parser');
 var controllerForFixture = require('../fixtures/controllerFor');
+var modelForFixture = require('../fixtures/modelForFixture');
 var needsStringFixture = require('../fixtures/needsString');
 var needsArrayFixture = require('../fixtures/needsArray');
 var renderOutletComplexFixture = require('../fixtures/renderOutletComplexFixture');
@@ -10,7 +11,6 @@ var partialFixture = require('../fixtures/partialFixture');
 var partialMultipleFixture = require('../fixtures/partialMultipleFixture');
 var renderFixture = require('../fixtures/renderFixture');
 var viewFixture = require('../fixtures/viewFixture');
-var depResolver;
 var parser;
 
 describe('Parser', function() {
@@ -18,6 +18,11 @@ describe('Parser', function() {
 
     it('should find the object dependency in controllerFor', function() {
       parser = new Parser(controllerForFixture);
+      expect(parser.controllers.post).to.equal('controller:post');
+    });
+
+    it('should find the object dependency in modelFor', function() {
+      parser = new Parser(modelForFixture);
       expect(parser.controllers.post).to.equal('controller:post');
     });
 
